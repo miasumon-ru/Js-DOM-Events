@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event summary</title>
+</head>
+
+<body>
+
+    <h1>Final Dom Event Handlers</h1>
+
+    <h3 id="handler-status">default text</h3>
+
+    <!-- option 1 final -->
+
+    <button onclick="handleOnClick()">handle event by onclick function</button>
+
+    <!-- option 2 final -->
+
+    <button id="event-listener">handle event by addEventListener</button>
+
+    <!-- option 2 recap -->
+
+    <input type="text" id="input-field">
+    <button id="btn-update">update</button>
+
+    <p id="input-text-display">default input text</p>
+
+
+    <script>
+
+        // function handleOnClick() {
+        //     console.log('button is clicked')
+        // }
+
+        // 
+
+        function handleOnClick() {
+            const handlerStatus = document.getElementById('handler-status');
+
+            handlerStatus.innerText = 'handled by onclick function attached on onclick attribute'
+        }
+
+        // option 2 by addEventListener
+
+        document.getElementById('event-listener').addEventListener('click', function(){
+            const handlerStatus = document.getElementById('handler-status');
+
+
+            handlerStatus.innerText = 'handled by addEventListener function attached on onclick attribute'
+
+
+        })
+        // option 2 recap
+
+        document.getElementById('btn-update').addEventListener('click', function(){
+            // console.log('btn clicked')
+
+            const inputField = document.getElementById('input-field');
+
+            // console.log(inputField.innerText)
+
+            const inputText = inputField.value;
+
+            // console.log(inputText)
+
+            const inputTextDisplay = document.getElementById('input-text-display');
+
+            inputTextDisplay.innerText = inputText;
+
+            inputField.value = ''
+
+            // console.log(inputTextDisplay)
+
+
+
+             
+        })
+
+
+    </script>
+
+</body>
+
+</html>
